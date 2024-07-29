@@ -3,7 +3,7 @@ name: Build and Push Docker Image to Docker Hub
 on:
   push:
     branches:
-      - main
+      - main  # Change this to the branch you want to trigger the workflow
 
 jobs:
   build-and-push:
@@ -27,7 +27,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/flutter-web-app:latest
+          tags: yogi2902/flutter_with_docker:latest
 
       - name: Log out from Docker Hub
         run: docker logout
